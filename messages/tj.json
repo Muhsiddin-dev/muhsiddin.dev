@@ -1,0 +1,65 @@
+{
+  "nav": {
+    "home": "Асосӣ",
+    "about": "Дар бораи ман",
+    "skills": "Малакаҳо",
+    "projects": "Лоиҳаҳо",
+    "certificates": "Сертификатҳо",
+    "contact": "Тамос"
+  },
+  "Admin": {
+    "name": "Муҳсиддин Назаров",
+    "role": "Frontend Барноманавис"
+  },
+  "hero": {
+    "greeting": "Салом, ман",
+    "downloadCV": "Боргирии CV",
+    "viewProjects": "Лоиҳаҳоро бинед"
+  },
+  "about": {
+    "title": "Дар бораи ман",
+    "education": "Таҳсилот",
+    "educationDesc": "Сертификати Таҳияи Frontend аз SoftClub",
+    "AboutMe": "Таҳиягари Frontend-и ҷавон ва донишҷӯи соҳаи барномасозӣ бо шавқи зиёд ба сохтани барномаҳои вебии миқёспазир ва корбарпазир. Ман дар истифодаи React ва Next.js маҳорати баланд дорам ва таҷрибаи кор бо воситаҳои муосири идоракунии ҳолат (state management) ба монанди Redux Toolkit (RTK Query), TanStack Query ва Zustand ва Jotai-ро дорам. Диққати асосии ман ба навиштани коди тоза, оптимизатсияшуда ва сохтани интерфейсҳои зебо бо Tailwind CSS, Shadcn UI  ва Magic UI нигаронида шудааст."
+  },
+  "skills": {
+    "title": "Малакаҳо",
+    "subtitle": "Технологияҳое, ки ман истифода мебарам"
+  },
+  "projects": {
+    "title": "Лоиҳаҳо",
+    "subtitle": "Кори охирини ман",
+    "viewLive": "Дидан",
+    "viewCode": "Код"
+  },
+  "certificates": {
+    "title": "Сертификатҳо",
+    "subtitle": "Дастовардҳои касбӣ",
+    "issuedBy": "Аз ҷониби"
+  },
+  "contact": {
+    "title": "Тамос",
+    "subtitle": "Бо ман алоқа гиред",
+    "email": "Почтаи электронӣ"
+  },
+  "footer": {
+    "rights": "Ҳамаи ҳуқуқҳо ҳифз шудаанд"
+  },
+  "admin": {
+    "login": "Воридшавӣ",
+    "logout": "Баромадан",
+    "dashboard": "Панели идоракунӣ",
+    "password": "Рамз",
+    "submit": "Фиристодан",
+    "save": "Захира кардан",
+    "cancel": "Бекор кардан",
+    "edit": "Таҳрир",
+    "delete": "Нест кардан",
+    "add": "Илова кардан",
+    "personalInfo": "Маълумоти шахсӣ",
+    "projectsList": "Рӯйхати лоиҳаҳо",
+    "certificatesList": "Рӯйхати сертификатҳо",
+    "uploadImage": "Бор кардани тасвир",
+    "uploadPhoto": "Бор кардани сурат"
+  }
+}
