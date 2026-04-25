@@ -4,7 +4,21 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['next-intl']
+  transpilePackages: ['next-intl'],
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'e-kitobxona.vercel.app',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'donishyob.com',
+        pathname: '**',
+      },
+    ],
+  },
 };
 
 export default withNextIntl(nextConfig);
