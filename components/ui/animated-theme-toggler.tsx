@@ -138,6 +138,17 @@ export const AnimatedThemeToggler = ({
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
+    // Check system preference and set initial theme
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const savedTheme = localStorage.getItem("theme")
+
+    // Set theme based on system preference if no saved theme exists
+    if (!savedTheme) {
+      const newTheme = systemPrefersDark ? "dark" : "light"
+      document.documentElement.classList.toggle("dark", systemPrefersDark)
+      localStorage.setItem("theme", newTheme)
+    }
+
     const updateTheme = () => {
       setIsDark(document.documentElement.classList.contains("dark"))
     }
@@ -150,7 +161,22 @@ export const AnimatedThemeToggler = ({
       attributeFilter: ["class"],
     })
 
-    return () => observer.disconnect()
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      // Only update if user hasn't manually set a preference
+      if (!localStorage.getItem("theme")) {
+        document.documentElement.classList.toggle("dark", e.matches)
+        setIsDark(e.matches)
+      }
+    }
+
+    mediaQuery.addEventListener('change', handleSystemThemeChange)
+
+    return () => {
+      observer.disconnect()
+      mediaQuery.removeEventListener('change', handleSystemThemeChange)
+    }
   }, [])
 
   const toggleTheme = useCallback(() => {
@@ -179,7 +205,7 @@ export const AnimatedThemeToggler = ({
     const applyTheme = () => {
       const newTheme = !isDark
       setIsDark(newTheme)
-      document.documentElement.classList.toggle("dark")
+      document.documentElement.classList.toggle("dark", newTheme)
       localStorage.setItem("theme", newTheme ? "dark" : "light")
     }
 

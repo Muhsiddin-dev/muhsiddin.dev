@@ -6,6 +6,7 @@ import { ExternalLink, Folder } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslations, useLocale } from 'next-intl'
 import { PROJECTS_DATA } from '@/lib/data'
+import Image from 'next/image'
 
 interface ProjectCardProps {
     project: typeof PROJECTS_DATA[0]
@@ -30,11 +31,12 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-colors shadow-sm"
         >
             {project.image_url ? (
-                <div className="aspect-video bg-linear-to-br from-primary/10 to-accent/10 overflow-hidden">
-                    <img
+                <div className="aspect-video bg-linear-to-br from-primary/10 to-accent/10 overflow-hidden relative">
+                    <Image
                         src={project.image_url}
                         alt={title as string}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                 </div>
             ) : (

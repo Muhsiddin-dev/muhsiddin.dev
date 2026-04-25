@@ -47,29 +47,66 @@ export const PROJECTS_DATA = [
     title_en: "e-Kitobxona",
     title_tg: "e-Kitobxona",
     title_ru: "e-Kitobxona",
-    description_en: "A digital library platform with Gemini AI integration...",
-    description_tg: "Платформаи китобхонаи рақамӣ бо интегратсияи Gemini AI...",
-    description_ru: "Платформа цифровой библиотеки с интеграцией Gemini AI...",
+
+    description_en: "A comprehensive library management system for educational institutions. Includes an admin dashboard for managing schools, regional filtering, and an interactive map interface for precise location tracking using React Leaflet.",
+
+    description_tg: "Системаи мукаммали идоракунии китобхонаҳо барои муассисаҳои таълимӣ. Дорои панели администратор барои идоракунии мактабҳо, филтратсия аз рӯи минтақаҳо ва харитаи интерактивӣ барои муайян кардани ҷойгиршавии муассисаҳо бо истифода аз React Leaflet.",
+
+    description_ru: "Комплексная система управления библиотеками для образовательных учреждений. Включает панель администратора для управления школами, фильтрацию по регионам и интерактивный интерфейс карты для точного определения местоположения с использованием React Leaflet.",
+
     image_url: "https://e-kitobxona.vercel.app/favicon.ico",
     live_url: "https://e-kitobxona.vercel.app",
     github_url: "https://github.com/Muhsiddin-dev/E-KITOBXONA",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Gemini AI"],
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Magic UI",
+      "RTK Query",
+      "Lucide React"
+    ],
+
     featured: true,
     sort_order: 1
   },
   {
-    id: "5f98a53a-17e8-46ba-b95d-ac9b5ic86a96",
-    title_en: "DonishYob",
-    title_tg: "DonishYob",
-    title_ru: "DonishYob",
-    description_en: "An educational platform designed to help students...",
-    description_tg: "Платформаи таълимӣ барои кӯмак ба донишҷӯён...",
-    description_ru: "Образовательная платформа, помогающая студентам...",
-    image_url: null,
-    live_url: null,
-    github_url: null,
-    technologies: ["React", "Redux Toolkit", "Tailwind CSS", "Node.js"],
-    featured: true,
-    sort_order: 2
+    "id": "5f98a53a-17e8-46ba-b95d-ac9b5ic86a96",
+    "title_en": "DonishYob",
+    "title_tg": "DonishYob",
+    "title_ru": "DonishYob",
+    "description_en": "A comprehensive educational ecosystem providing students with access to digital libraries, course materials, and interactive learning tools. Built with a focus on performance and seamless user experience.",
+    "description_tg": "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
+    "description_ru": "Комплексная образовательная экосистема, предоставляющая студентам доступ к цифровым библиотекам, учебным материалам и интерактивным инструментам обучения. Разработана с акцентом на производительность и удобство пользователя.",
+    "image_url": "https://donishyob.com/donishYob.png",
+    "live_url": "https://donishyob.com/",
+    "github_url": "https://github.com/ScienceHub-Project/DonishYob",
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tanstack Query",
+      "Tailwind CSS",
+      "Zod"
+    ],
+    "featured": true,
+    "sort_order": 1
   }
 ]
+
+export const CERTIFICATES_DATA = [
+  {
+    id: "1",
+    title_en: "Frontend Development Certificate",
+    title_tj: "Сертификати Таҳияи Frontend",
+    title_ru: "Сертификат Frontend-разработки",
+    issuer_en: "SoftClub.tj",
+    issuer_tj: "SoftClub.tj",
+    issuer_ru: "SoftClub.tj",
+    image_url: '/Certificate_Of_SoftClub.jpg',
+    issue_date: "2026-01-05",
+    credential_url: null,
+    sort_order: 1
+  },
+];

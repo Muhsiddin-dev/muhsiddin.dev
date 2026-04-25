@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -32,15 +32,15 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
                         // alt={Admin_Name}
                         // fill 
                         grid="8x8"
-                        // className="object-cover w-full h-full rounded-full"
-                        // priority
+                    // className="object-cover w-full h-full rounded-full"
+                    // priority
                     />
                 </SwiperSlide>
                 <SwiperSlide className="w-full h-full relative">
                     <Image
                         src={'/Img2-Admin.png'}
                         alt={Admin_Name}
-                        fill 
+                        fill
                         className="object-cover w-full h-full rounded-full"
                         priority
                     />
@@ -49,13 +49,10 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
                     <Image
                         src={'/Img3-Admin.png'}
                         alt={Admin_Name}
-                        fill 
+                        fill
                         className="object-cover w-full h-full rounded-full"
                         priority
                     />
-                </SwiperSlide>
-                <SwiperSlide className="w-full h-full relative">
-                    <img className="w-full h-full object-cover rounded-full" src="https://swiperjs.com/demos/images/abstract-1.jpg" />
                 </SwiperSlide>
             </Swiper>
         </>

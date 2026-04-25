@@ -1,8 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
-import { ArrowDown, GitHub, Linkedin, Mail, Send } from 'lucide-react'
+import { ArrowDown, Mail, Send } from 'lucide-react'
 // import { useLanguage, getLocalizedText } from '@/lib/language-context'
 import { Button } from '@/components/ui/button'
 import { Admin } from '@/types/types'

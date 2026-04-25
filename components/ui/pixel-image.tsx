@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react"
 import { cn } from "@/lib/utils"
+import Image from 'next/image'
 
 type Grid = {
   rows: number
@@ -40,8 +41,6 @@ export const PixelImage = ({
 }: PixelImageProps) => {
   const [isVisible, setIsVisible] = useState(false)
   const [showColor, setShowColor] = useState(false)
-  const [randomDelays, setRandomDelays] = useState<number[]>([])
-
   const MIN_GRID = 1
   const MAX_GRID = 16
 
@@ -61,13 +60,20 @@ export const PixelImage = ({
     return isValidGrid(customGrid) ? customGrid! : DEFAULT_GRIDS[grid]
   }, [customGrid, grid])
 
-  // ХАТОГИИ 2: Танҳо як useEffect кифоя аст
-  useEffect(() => {
+  // Generate random delays using a stable key to avoid setState in useEffect
+  const randomDelays = useMemo(() => {
     const total = rows * cols
-    const delays = Array.from({ length: total }, () => Math.random() * maxAnimationDelay)
-    setRandomDelays(delays)
+    const seed = `${rows}-${cols}-${maxAnimationDelay}`
+    // Simple hash function to create deterministic but pseudo-random delays
+    let hash = 0
+    for (let i = 0; i < seed.length; i++) {
+      hash = ((hash << 5) - hash) + seed.charCodeAt(i)
+      hash = hash & hash
+    }
+    return Array.from({ length: total }, (_, i) => ((hash + i * 31) % 1000) / 1000 * maxAnimationDelay)
+  }, [rows, cols, maxAnimationDelay])
 
-    // БА ИНҶО ДИҚҚАТ КУН:
+  useEffect(() => {
     // Мо setIsVisible-ро дар дохили як requestAnimationFrame ё setTimeout мемонем
     // то ки аввал DOM сохта шавад, баъд аниматсия сар шавад.
     const animationTimeout = setTimeout(() => {
@@ -82,7 +88,7 @@ export const PixelImage = ({
       clearTimeout(animationTimeout)
       clearTimeout(colorTimeout)
     }
-  }, [colorRevealDelay, rows, cols, maxAnimationDelay])
+  }, [colorRevealDelay])
 
   // ХАТОГИИ 3: Дар pieces дигар Math.random лозим нест
   const pieces = useMemo(() => {
@@ -120,11 +126,12 @@ export const PixelImage = ({
             transitionDuration: `${pixelFadeInDuration}ms`,
           }}
         >
-          <img
+          <Image
             src={src}
             alt={`Pixel image piece ${index + 1}`}
+            fill
             className={cn(
-              "z-1 rounded-[2.5rem] object-cover h-full w-full", // h-full w-full илова шуд
+              "z-1 rounded-[2.5rem] object-cover", // h-full w-full илова шуд
               grayscaleAnimation && (showColor ? "grayscale-0" : "grayscale")
             )}
             style={{

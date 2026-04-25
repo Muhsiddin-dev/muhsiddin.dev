@@ -6,9 +6,8 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
 import { AnimatedThemeToggler } from '@/components/ui/animated-theme-toggler'
-import type { Language } from '@/types/types'
 import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 
 
@@ -18,7 +17,6 @@ export default function Header() {
   const t = useTranslations('nav');
   const locale = useLocale()
   const router = useRouter()
-  const pathname = usePathname()
 
   const languages = [
     { code: "tj", label: 'Тоҷикӣ', flag: "🇹🇯" },
