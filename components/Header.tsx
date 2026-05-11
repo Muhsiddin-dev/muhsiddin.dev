@@ -10,9 +10,6 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useRouter } from 'next/navigation'
 
 
-
-
-
 export default function Header() {
   const t = useTranslations('nav');
   const locale = useLocale()
@@ -69,8 +66,7 @@ export default function Header() {
             muhsiddin.dev
           </motion.a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className='hidden md:flex gap-9'>
             {navItems.map((item) => (
               <motion.a
                 key={item.key}
@@ -81,62 +77,59 @@ export default function Header() {
                 {t(item.key)}
               </motion.a>
             ))}
+          </div>
 
-            {/* Language Dropdown */}
-            <div className="relative flex gap-3 items-center">
-              <AnimatedThemeToggler />
-              <div className="relative inline-block text-left">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                  className="flex items-center gap-2 min-w-[90px]"
-                >
-                  <span>{currentLang.flag}</span>
-                  <span className="uppercase">{currentLang.code}</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${langDropdownOpen ? 'rotate-180' : ''}`} />
-                </Button>
+          <div className=" hidden relative md:flex gap-3 items-center">
+            <AnimatedThemeToggler />
+            <div className="relative inline-block text-left">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="flex items-center gap-2 min-w-[90px]"
+              >
+                <span>{currentLang.flag}</span>
+                <span className="uppercase">{currentLang.code}</span>
+                <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${langDropdownOpen ? 'rotate-180' : ''}`} />
+              </Button>
 
-                <AnimatePresence>
-                  {langDropdownOpen && (
-                    <>
-                      {/* Барои он ки агар берун аз меню клик кунӣ, он пӯшида шавад */}
-                      <div
-                        className="fixed inset-0 z-40"
-                        onClick={() => setLangDropdownOpen(false)}
-                      />
+              <AnimatePresence>
+                {langDropdownOpen && (
+                  <>
+                    {/* Барои он ки агар берун аз меню клик кунӣ, он пӯшида шавад */}
+                    <div
+                      className="fixed inset-0 z-40"
+                      onClick={() => setLangDropdownOpen(false)}
+                    />
 
-                      <motion.div
-                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                        className="absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-lg overflow-hidden min-w-[140px] z-50"
-                      >
-                        <div className="py-1">
-                          {languages.map((lang) => (
-                            <button
-                              key={lang.code}
-                              onClick={() => handleLangChange(lang.code)}
-                              className={`w-full px-4 py-2 text-left flex items-center gap-3 hover:bg-muted transition-colors ${currentLang.code === lang.code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
-                                }`}
-                            >
-                              <span className="text-lg">{lang.flag}</span>
-                              <span>{lang.label}</span>
-                            </button>
-                          ))}
-                        </div>
-                      </motion.div>
-                    </>
-                  )}
-                </AnimatePresence>
-              </div>
+                    <motion.div
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      className="absolute right-0 top-full mt-2 bg-card border border-border rounded-lg shadow-lg overflow-hidden min-w-[140px] z-50"
+                    >
+                      <div className="py-1">
+                        {languages.map((lang) => (
+                          <button
+                            key={lang.code}
+                            onClick={() => handleLangChange(lang.code)}
+                            className={`w-full px-4 py-2 text-left flex items-center gap-3 hover:bg-muted transition-colors ${currentLang.code === lang.code ? 'bg-primary/10 text-primary font-medium' : 'text-foreground'
+                              }`}
+                          >
+                            <span className="text-lg">{lang.flag}</span>
+                            <span>{lang.label}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-3">
             <AnimatedThemeToggler />
-            {/* Language Dropdown Mobile */}
             <div className="relative">
               <Button
                 variant="outline"
@@ -185,7 +178,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <AnimatePresence>
           {isOpen && (
             <motion.div

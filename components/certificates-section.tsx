@@ -38,11 +38,25 @@ function CertificateCard({
     const title = certificate[`title_${locale}` as keyof Certificate] || certificate.title_en
     const issuer = certificate[`issuer_${locale}` as keyof Certificate] || certificate.issuer_en
 
-    const dateLocales: Record<string, string> = {
-        tj: 'tg-TJ',
-        ru: 'ru-RU',
-        en: 'en-US',
+    const monthNames: Record<string, string[]> = {
+        tj: [
+            'январ', 'феврал', 'март', 'апрел', 'май', 'июн',
+            'июл', 'август', 'сентябр', 'октябр', 'ноябр', 'декабр',
+        ],
+        ru: [
+            'январь', 'февраль', 'март', 'апрель', 'май', 'июнь',
+            'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь',
+        ],
+        en: [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December',
+        ],
     }
+
+    const issueDate = certificate.issue_date ? new Date(certificate.issue_date) : null
+    const formattedDate = issueDate
+        ? `${monthNames[locale]?.[issueDate.getUTCMonth()] ?? monthNames.en[issueDate.getUTCMonth()]} ${issueDate.getUTCFullYear()}`
+        : ''
 
     return (
         <motion.div
@@ -83,10 +97,7 @@ function CertificateCard({
 
                 {certificate.issue_date && (
                     <p className="text-muted-foreground text-[11px] mb-4 uppercase tracking-wider">
-                        {new Date(certificate.issue_date).toLocaleDateString(dateLocales[locale], {
-                            year: 'numeric',
-                            month: 'long',
-                        })}
+                        {formattedDate}
                     </p>
                 )}
 
