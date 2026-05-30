@@ -50,7 +50,7 @@ export const PROJECTS_DATA = [
 
     description_en: "A comprehensive library management system for educational institutions. Includes an admin dashboard for managing schools, regional filtering, and an interactive map interface for precise location tracking using React Leaflet.",
 
-    description_tg: "Системаи мукаммали идоракунии китобхонаҳо барои муассисаҳои таълимӣ. Дорои панели администратор барои идоракунии мактабҳо, филтратсия аз рӯи минтақаҳо ва харитаи интерактивӣ барои муайян кардани ҷойгиршавии муассисаҳо бо истифода аз React Leaflet.",
+    description_tj: "Системаи мукаммали идоракунии китобхонаҳо барои муассисаҳои таълимӣ. Дорои панели администратор барои идоракунии мактабҳо, филтратсия аз рӯи минтақаҳо ва харитаи интерактивӣ барои муайян кардани ҷойгиршавии муассисаҳо бо истифода аз React Leaflet.",
 
     description_ru: "Комплексная система управления библиотеками для образовательных учреждений. Включает панель администратора для управления школами, фильтрацию по регионам и интерактивный интерфейс карты для точного определения местоположения с использованием React Leaflet.",
 
@@ -77,9 +77,9 @@ export const PROJECTS_DATA = [
     "title_tg": "DonishYob",
     "title_ru": "DonishYob",
     "description_en": "A comprehensive educational ecosystem providing students with access to digital libraries, course materials, and interactive learning tools. Built with a focus on performance and seamless user experience.",
-    "description_tg": "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
+    "description_tj": "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
     "description_ru": "Комплексная образовательная экосистема, предоставляющая студентам доступ к цифровым библиотекам, учебным материалам и интерактивным инструментам обучения. Разработана с акцентом на производительность и удобство пользователя.",
-    "image_url": "https://donishyob.com/donishYob.png",
+    "image_url": "https://donishyob.com/donishyob.png",
     "live_url": "https://donishyob.com/",
     "github_url": "https://github.com/ScienceHub-Project/DonishYob",
     "technologies": [
@@ -90,6 +90,35 @@ export const PROJECTS_DATA = [
       "Tailwind CSS",
       "Zod"
     ],
+    "featured": true,
+    "sort_order": 1
+  },
+  {
+    "id": "a64f9380-5a9e-421a-a874-b88a7cb645",
+    "title_en": "MTMU 97",
+    "title_ru": "MTMU 97",
+    "title_tj": "MTMU 97",
+
+    "description_en": "Secondary General Education Institution №97 of Dushanbe. Information on admissions, faculty, facilities, and student achievements. Build your child's future with us!",
+
+    "description_tj": "Муассисаи таҳсилоти миёнаи умумии №97-и шаҳри Душанбе. Маълумот дар бораи қабул, омӯзгорон, синфхонаҳо ва дастовардҳои хонандагон. Ояндаи фарзанди худро бо мо созед!",
+
+    "description_ru": "Среднее общеобразовательное учреждение №97 города Душанбе. Информация о приёме, учителях, учебных классах и достижениях учащихся. Стройте будущее своего ребенка вместе с нами!",
+
+    "image_url": "https://mtmu-97.vercel.app/mtmu_97.png",
+    "live_url": "https://mtmu-97.vercel.app/",
+    "github_url": "https://github.com/Muhsiddin-dev/MTMU_97",
+
+    "technologies": [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "Magic UI",
+      "Zustand",
+      "Lucide React"
+    ],
+
     "featured": true,
     "sort_order": 1
   }

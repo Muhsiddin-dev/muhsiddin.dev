@@ -70,7 +70,7 @@ export function AboutSection() {
                         <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
                             <div className="bg-card p-6 rounded-xl border border-border text-center">
                                 <Code2 className="h-8 w-8 text-primary mx-auto mb-3" />
-                                <div className="text-3xl font-bold text-foreground">2+</div>
+                                <div className="text-3xl font-bold text-foreground">3+</div>
                                 <div className="text-muted-foreground text-sm">
                                     {statsLabels.tj.projects}
                                 </div>

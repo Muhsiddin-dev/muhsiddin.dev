@@ -10,12 +10,15 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'e-kitobxona.vercel.app',
-        pathname: '**',
       },
       {
         protocol: 'https',
         hostname: 'donishyob.com',
-        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'mtmu-97.vercel.app',
+        // pathname: '**',
       },
     ],
   },
