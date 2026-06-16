@@ -17,28 +17,30 @@ export const SKILLS_DATA: Skill[] = [
   { id: 8, name: "SCSS", category: "Styling", proficiency: 60, sort_order: 8, icon: null },
 
   // --- UI Libraries ---
-  { id: 9, name: "Magic UI", category: "UI Libraries", proficiency: 100, sort_order: 9, icon: null },
-  { id: 10, name: "Shadcn UI", category: "UI Libraries", proficiency: 100, sort_order: 10, icon: null },
+  { id: 9, name: "Shadcn UI", category: "UI Libraries", proficiency: 100, sort_order: 10, icon: null },
+  { id: 10, name: "Magic UI", category: "UI Libraries", proficiency: 100, sort_order: 9, icon: null },
+  { id: 11, name: "Ant Design", category: "UI Libraries", proficiency: 100, sort_order: 11, icon: null },
+  { id: 12, name: "MUI UI", category: "UI Libraries", proficiency: 100, sort_order: 12, icon: null },
 
   // --- State Management ---
-  { id: 11, name: "Redux Toolkit (RTK Query)", category: "State Management", proficiency: 95, sort_order: 11, icon: null },
-  { id: 12, name: "Zustand", category: "State Management", proficiency: 90, sort_order: 12, icon: null },
-  { id: 13, name: "Jotai", category: "State Management", proficiency: 90, sort_order: 13, icon: null },
+  { id: 12, name: "Redux Toolkit (RTK Query)", category: "State Management", proficiency: 95, sort_order: 12, icon: null },
+  { id: 13, name: "Zustand", category: "State Management", proficiency: 90, sort_order: 13, icon: null },
+  { id: 14, name: "Jotai", category: "State Management", proficiency: 90, sort_order: 14, icon: null },
 
   // --- Data Fetching ---
-  { id: 14, name: "Axios", category: "Data Fetching", proficiency: 95, sort_order: 14, icon: null },
-  { id: 15, name: "Fetch", category: "Data Fetching", proficiency: 90, sort_order: 15, icon: null },
-  { id: 16, name: "TanStack Query", category: "Data Fetching", proficiency: 40, sort_order: 16, icon: null },
+  { id: 15, name: "Axios", category: "Data Fetching", proficiency: 95, sort_order: 15, icon: null },
+  { id: 16, name: "Fetch", category: "Data Fetching", proficiency: 90, sort_order: 16, icon: null },
+  { id: 17, name: "TanStack Query", category: "Data Fetching", proficiency: 40, sort_order: 17, icon: null },
 
   // --- Next.js (Features) ---
-  { id: 17, name: "Client Components", category: "Next.js", proficiency: 95, sort_order: 17, icon: null },
-  { id: 18, name: "Server Components", category: "Next.js", proficiency: 93, sort_order: 18, icon: null },
-  { id: 19, name: "Middleware", category: "Next.js", proficiency: 90, sort_order: 19, icon: null },
-  { id: 20, name: "Routing", category: "Next.js", proficiency: 90, sort_order: 20, icon: null },
-  { id: 21, name: "Server Actions", category: "Next.js", proficiency: 80, sort_order: 21, icon: null },
+  { id: 18, name: "Client Components", category: "Next.js", proficiency: 95, sort_order: 18, icon: null },
+  { id: 19, name: "Server Components", category: "Next.js", proficiency: 93, sort_order: 19, icon: null },
+  { id: 20, name: "Middleware", category: "Next.js", proficiency: 90, sort_order: 20, icon: null },
+  { id: 21, name: "Routing", category: "Next.js", proficiency: 90, sort_order: 21, icon: null },
+  { id: 22, name: "Server Actions", category: "Next.js", proficiency: 80, sort_order: 22, icon: null },
 
   // --- React (Features) ---
-  { id: 22, name: "Hooks", category: "React", proficiency: 90, sort_order: 22, icon: null },
+  { id: 23, name: "Hooks", category: "React", proficiency: 90, sort_order: 23, icon: null },
 ]
 
 export const PROJECTS_DATA = [

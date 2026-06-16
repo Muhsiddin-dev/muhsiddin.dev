@@ -72,14 +72,14 @@ export function AboutSection() {
                                 <Code2 className="h-8 w-8 text-primary mx-auto mb-3" />
                                 <div className="text-3xl font-bold text-foreground">3+</div>
                                 <div className="text-muted-foreground text-sm">
-                                    {statsLabels.tj.projects}
+                                    {t("Myprojects")}
                                 </div>
                             </div>
                             <div className="bg-card p-6 rounded-xl border border-border text-center">
                                 <Sparkles className="h-8 w-8 text-primary mx-auto mb-3" />
                                 <div className="text-3xl font-bold text-foreground">14+</div>
                                 <div className="text-muted-foreground text-sm">
-                                    {statsLabels.tj.skills}
+                                    {t("Myskills")}
                                 </div>
                             </div>
                         </motion.div>

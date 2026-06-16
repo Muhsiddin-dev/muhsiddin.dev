@@ -20,7 +20,9 @@
     "title": "About Me",
     "education": "Education",
     "educationDesc": "Frontend Development Certificate from SoftClub",
-    "AboutMe": "A passionate Junior Frontend Developer and programming student with strong expertise in building scalable, user-centric web applications. Highly proficient in React and Next.js, with advanced state management experience using Redux Toolkit (RTK Query), TanStack Query, Jotai and Zustand. Skilled in creating modern, responsive interfaces with Tailwind CSS ,Shadcn UI and Magic UI. Dedicated to writing clean, optimized code and implementing efficient data-fetching strategies."
+    "AboutMe": "A passionate Junior Frontend Developer and programming student with strong expertise in building scalable, user-centric web applications. Highly proficient in React and Next.js, with advanced state management experience using Redux Toolkit (RTK Query), TanStack Query, Jotai and Zustand. Skilled in creating modern, responsive interfaces with Tailwind CSS ,Shadcn UI and Magic UI. Dedicated to writing clean, optimized code and implementing efficient data-fetching strategies.",
+    "Myprojects": "Projects",
+    "Myskills": "Skills"
   },
   "certificates": {
     "title": "Certificates",
