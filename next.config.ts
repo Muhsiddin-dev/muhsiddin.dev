@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'donishyob.com',
+        hostname: 'donishyob.vercel.app',
       },
       {
         protocol: 'https',
