@@ -81,9 +81,9 @@ export const PROJECTS_DATA = [
     "description_en": "A comprehensive educational ecosystem providing students with access to digital libraries, course materials, and interactive learning tools. Built with a focus on performance and seamless user experience.",
     "description_tj": "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
     "description_ru": "Комплексная образовательная экосистема, предоставляющая студентам доступ к цифровым библиотекам, учебным материалам и интерактивным инструментам обучения. Разработана с акцентом на производительность и удобство пользователя.",
-    "image_url": "https://donishyob.com/donishyob.png",
-    "live_url": "https://donishyob.com/",
-    "github_url": "https://github.com/ScienceHub-Project/DonishYob",
+    "image_url": "https://donishyob.vercel.app/donishyob.png",
+    "live_url": "https://donishyob.vercel.app/",
+    "github_url": "https://github.com/Muhsiddin-dev/DonishYob",
     "technologies": [
       "Next.js",
       "TypeScript",
