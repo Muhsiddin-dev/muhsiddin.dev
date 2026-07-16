@@ -5,7 +5,7 @@ import { Skill } from '@/types/types'
 import { motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useRef } from 'react'
-// Импорт кардани маълумот аз файли алоҳида
+import { NumberTicker } from './ui/number-ticker'
 
 interface SkillBarProps {
   skill: Skill
@@ -28,7 +28,13 @@ function SkillBar({ skill, index }: SkillBarProps) {
         <span className="text-foreground font-medium group-hover:text-primary transition-colors">
           {skill.name}
         </span>
-        <span className="text-muted-foreground text-sm">{skill.proficiency}%</span>
+        <div className="text-muted-foreground text-sm">
+          <NumberTicker
+            value={skill.proficiency}
+            className="text-muted-foreground text-sm"
+          />
+          <span>%</span>
+        </div>
       </div>
       <div className="h-2 bg-muted rounded-full overflow-hidden">
         <motion.div

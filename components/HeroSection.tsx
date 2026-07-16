@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Admin } from '@/types/types'
 import { useTranslations } from 'next-intl'
 import EffectFlipComponent from './swipper/Effect-Flip/effect-flip'
+import { TypingAnimation } from './ui/typing-animation'
 
 
 export function HeroSection() {
@@ -83,9 +84,16 @@ export function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance"
+                            className="min-h-25  min-w-xs max-w-2xs w-full md:min-h-37.5 "
                         >
-                            {Admin_Translation("name")}
+                            <TypingAnimation
+                                words={[
+                                    Admin_Translation("name")
+                                ]}
+                                cursorStyle="underscore"
+                                loop={true}
+                                className="text-4xl md:text-6xl font-bold text-foreground mb-6 h-[80px] md:h-[120px] block"
+                            />
                         </motion.h1>
 
                         <motion.p

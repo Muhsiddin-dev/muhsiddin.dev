@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { useTranslations, useLocale } from 'next-intl'
 import { PROJECTS_DATA } from '@/lib/data'
 import Image from 'next/image'
+import { Safari } from './ui/safari'
 
 interface ProjectCardProps {
     project: typeof PROJECTS_DATA[0]
@@ -31,19 +32,18 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-colors shadow-sm"
         >
             {project.image_url ? (
-                <div className="aspect-video bg-linear-to-br from-primary/10 to-accent/10 overflow-hidden relative">
-                    <Image
-                        src={project.image_url}
-                        alt={title as string}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+            <div onClick={() => window.open(project.live_url, '_blank')} className="w-full cursor-pointer">
+                    <Safari mode='default'
+                        imageSrc={project.image_url}
+                        url="magicui.design"
+                        className="object-contain" />
                 </div>
             ) : (
                 <div className="aspect-video bg-linear-to-br from-primary/10 to-accent/10 flex items-center justify-center">
                     <Folder className="h-16 w-16 text-primary/50" />
                 </div>
             )}
+
 
             <div className="p-6">
                 <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">

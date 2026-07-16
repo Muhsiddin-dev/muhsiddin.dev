@@ -45,7 +45,7 @@ export default function Header() {
   const currentLang = languages.find(l => l.code === locale) || languages[0];
 
   const handleLangChange = (newLocale: string) => {
-    router.replace(`/${newLocale}`)
+    router.push(`/${newLocale}`)
   }
 
 

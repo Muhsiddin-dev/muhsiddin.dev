@@ -36,6 +36,16 @@
     "subtitle": "Contact me",
     "email": "Email"
   },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I use"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "My latest work",
+    "viewLive": "View Live",
+    "viewCode": "Code"
+  },
   "footer": {
     "rights": "All rights reserved"
   }

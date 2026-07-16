@@ -28,7 +28,7 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
             >
                 <SwiperSlide className="w-full h-full relative">
                     <PixelImage
-                        src={'/Img3-Admin.png'}
+                        src={'/Img1-Admin.png'}
                         // alt={Admin_Name}
                         // fill 
                         grid="8x8"
@@ -38,7 +38,7 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
                 </SwiperSlide>
                 <SwiperSlide className="w-full h-full relative">
                     <Image
-                        src={'/Img1-Admin.png'}
+                        src={'/Img3-Admin.png'}
                         alt={Admin_Name}
                         fill
                         className="object-cover w-full h-full rounded-full"
@@ -47,7 +47,7 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
                 </SwiperSlide>
                 <SwiperSlide className="w-full h-full relative">
                     <Image
-                        src={'/Img2-Admin.png '}
+                        src={'/Img2-Admin.png'}
                         alt={Admin_Name}
                         fill
                         className="object-cover w-full h-full rounded-full"

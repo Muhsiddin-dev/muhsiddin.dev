@@ -11,7 +11,7 @@ export const Admin = {
   telegram_UserName: "https://t.me/lll_nazarov_lll",
   github_UserName: "https://github.com/Muhsiddin-dev",
   linkedin_UserName: "https://linkedin.com/in/muhsiddin-nazarov",
-  Instagram_UserName: "https://www.instagram.com/_nazarov._011",
+  Instagram_UserName: "https://www.instagram.com/_nazarov.__011",
   website: "https://muhsiddin.dev",
   Age: 15,
   Country: "Tajikistan",
