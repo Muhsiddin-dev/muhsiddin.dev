@@ -5,21 +5,9 @@ import { useRef, useState } from 'react'
 import { Award, X, ExternalLink } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslations, useLocale } from 'next-intl'
-import { CERTIFICATES_DATA } from '@/lib/data'
+import { useContentStore } from '@/hooks/use-content-store'
+import type { Certificate } from '@/types/types'
 import Image from 'next/image'
-
-interface Certificate {
-    id: string;
-    title_en: string;
-    title_tj: string;
-    title_ru: string;
-    issuer_en: string;
-    issuer_tj: string;
-    issuer_ru: string;
-    image_url: string | null;
-    issue_date: string;
-    credential_url: string | null;
-}
 
 function CertificateCard({
     certificate,
@@ -119,6 +107,7 @@ export function CertificatesSection() {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
     const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+    const { certificates } = useContentStore()
 
     return (
         <section id="certificates" className="py-24 bg-muted/20">
@@ -137,7 +126,9 @@ export function CertificatesSection() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                    {CERTIFICATES_DATA.map((certificate, index) => (
+                    {[...certificates]
+                        .sort((a, b) => a.sort_order - b.sort_order)
+                        .map((certificate, index) => (
                         <CertificateCard
                             key={certificate.id}
                             certificate={certificate}

@@ -1,7 +1,7 @@
 'use client'
 
-import { SKILLS_DATA } from '@/lib/data'
 import { Skill } from '@/types/types'
+import { useContentStore } from '@/hooks/use-content-store'
 import { motion, useInView } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 import { useRef } from 'react'
@@ -52,8 +52,9 @@ export function SkillsSection() {
   const t = useTranslations("skills")
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { skills } = useContentStore()
 
-  const groupedSkills = SKILLS_DATA.reduce((acc, skill) => {
+  const groupedSkills = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = []
     }

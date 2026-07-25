@@ -55,12 +55,10 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
 
-  // Боварӣ ҳосил мекунем, ки локел дар рӯйхати иҷозатдодашуда ҳаст
   if (!routing.locales.includes(locale as typeof routing.locales[number])) {
     notFound();
   }
 
-  // МУҲИМ: getMessages дар версияҳои нав параметр қабул намекунад
   const messages = await getMessages();
 
   return (

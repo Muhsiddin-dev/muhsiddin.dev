@@ -4,15 +4,19 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Mail, Send } from 'lucide-react'
 // import { useLanguage, getLocalizedText } from '@/lib/language-context'
 import { Button } from '@/components/ui/button'
-import { Admin } from '@/types/types'
-import { useTranslations } from 'next-intl'
+import { useContentStore } from '@/hooks/use-content-store'
+import type { Language } from '@/types/types'
+import { useLocale, useTranslations } from 'next-intl'
 import EffectFlipComponent from './swipper/Effect-Flip/effect-flip'
 import { TypingAnimation } from './ui/typing-animation'
 
 
 export function HeroSection() {
     const t = useTranslations("hero")
-    const Admin_Translation = useTranslations("Admin")
+    const locale = useLocale() as Language
+    const { personal } = useContentStore()
+    const fullName = `${personal[`name_${locale}`]} ${personal[`surname_${locale}`]}`
+    const role = personal[`role_${locale}`]
 
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative md:top-0 top-14 overflow-hidden">
@@ -54,7 +58,7 @@ export function HeroSection() {
                         className="relative w-64 h-64 md:w-80 md:h-80"
                     >
                         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/20 shadow-2xl z-10">
-                            <EffectFlipComponent Admin_Name={Admin_Translation("name")} />
+                            <EffectFlipComponent Admin_Name={fullName} />
                         </div>
 
                         <motion.div
@@ -88,7 +92,7 @@ export function HeroSection() {
                         >
                             <TypingAnimation
                                 words={[
-                                    Admin_Translation("name")
+                                    fullName
                                 ]}
                                 cursorStyle="underscore"
                                 loop={true}
@@ -102,7 +106,7 @@ export function HeroSection() {
                             transition={{ delay: 0.4 }}
                             className="text-xl md:text-2xl text-muted-foreground mb-8"
                         >
-                            {Admin_Translation("role")}
+                            {role}
                         </motion.p>
 
                         <motion.div
@@ -129,7 +133,7 @@ export function HeroSection() {
                             className="flex justify-center lg:justify-start gap-6"
                         >
                             <motion.a
-                                href={Admin.github_UserName}
+                                href={personal.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -149,7 +153,7 @@ export function HeroSection() {
                                 </svg>
                             </motion.a>
                             <motion.a
-                                href={Admin.linkedin_UserName}
+                                href={personal.linkedin}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -164,7 +168,7 @@ export function HeroSection() {
                                 </svg>
                             </motion.a>
                             <motion.a
-                                href={Admin.telegram_UserName}
+                                href={personal.telegram}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -173,7 +177,7 @@ export function HeroSection() {
                                 <Send className="h-6 w-6" />
                             </motion.a>
                             <motion.a
-                                href={`mailto:${Admin.email}`}
+                                href={`mailto:${personal.email}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -182,7 +186,7 @@ export function HeroSection() {
                                 <Mail className="h-6 w-6" />
                             </motion.a>
                             <motion.a
-                                href={Admin.Instagram_UserName}
+                                href={personal.instagram}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-muted-foreground hover:text-foreground transition-colors"

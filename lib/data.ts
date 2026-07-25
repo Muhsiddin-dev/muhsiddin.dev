@@ -1,5 +1,4 @@
-import { Skill } from '@/types/types'
-
+import { Certificate, Project, Skill } from '@/types/types'
 
 export const SKILLS_DATA: Skill[] = [
   // --- Frameworks ---
@@ -24,7 +23,7 @@ export const SKILLS_DATA: Skill[] = [
 
   // --- State Management ---
   { id: 13, name: "Redux Toolkit", category: "State Management", proficiency: 95, sort_order: 12, icon: null },
-  { id: 14, name: "Redux Toolkit  Query", category: "State Management", proficiency: 95, sort_order: 12, icon: null },
+  { id: 14, name: "Redux Toolkit Query", category: "State Management", proficiency: 95, sort_order: 12, icon: null },
   { id: 15, name: "Zustand", category: "State Management", proficiency: 90, sort_order: 13, icon: null },
   { id: 16, name: "Jotai", category: "State Management", proficiency: 90, sort_order: 14, icon: null },
 
@@ -44,23 +43,18 @@ export const SKILLS_DATA: Skill[] = [
   { id: 25, name: "Hooks", category: "React", proficiency: 90, sort_order: 23, icon: null },
 ]
 
-export const PROJECTS_DATA = [
+export const PROJECTS_DATA: Project[] = [
   {
     id: "a64f9380-5a9e-421a-a874-b88a7cb645e5",
     title_en: "e-Kitobxona",
-    title_tg: "e-Kitobxona",
+    title_tj: "e-Kitobxona",
     title_ru: "e-Kitobxona",
-
     description_en: "A comprehensive library management system for educational institutions. Includes an admin dashboard for managing schools, regional filtering, and an interactive map interface for precise location tracking using React Leaflet.",
-
     description_tj: "Системаи мукаммали идоракунии китобхонаҳо барои муассисаҳои таълимӣ. Дорои панели администратор барои идоракунии мактабҳо, филтратсия аз рӯи минтақаҳо ва харитаи интерактивӣ барои муайян кардани ҷойгиршавии муассисаҳо бо истифода аз React Leaflet.",
-
     description_ru: "Комплексная система управления библиотеками для образовательных учреждений. Включает панель администратора для управления школами, фильтрацию по регионам и интерактивный интерфейс карты для точного определения местоположения с использованием React Leaflet.",
-
     image_url: "/imageEKitobxona.png",
     live_url: "https://e-kitobxona.vercel.app",
     github_url: "https://github.com/Muhsiddin-dev/E-KITOBXONA",
-
     technologies: [
       "Next.js",
       "TypeScript",
@@ -70,22 +64,21 @@ export const PROJECTS_DATA = [
       "RTK Query",
       "Lucide React"
     ],
-
     featured: true,
     sort_order: 1
   },
   {
-    "id": "5f98a53a-17e8-46ba-b95d-ac9b5ic86a96",
-    "title_en": "DonishYob",
-    "title_tg": "DonishYob",
-    "title_ru": "DonishYob",
-    "description_en": "A comprehensive educational ecosystem providing students with access to digital libraries, course materials, and interactive learning tools. Built with a focus on performance and seamless user experience.",
-    "description_tj": "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
-    "description_ru": "Комплексная образовательная экосистема, предоставляющая студентам доступ к цифровым библиотекам, учебным материалам и интерактивным инструментам обучения. Разработана с акцентом на производительность и удобство пользователя.",
-    "image_url": "/imageDonishyob.png",
-    "live_url": "https://donishyob.vercel.app/",
-    "github_url": "https://github.com/Muhsiddin-dev/DonishYob",
-    "technologies": [
+    id: "5f98a53a-17e8-46ba-b95d-ac9b5ic86a96",
+    title_en: "DonishYob",
+    title_tj: "DonishYob",
+    title_ru: "DonishYob",
+    description_en: "A comprehensive educational ecosystem providing students with access to digital libraries, course materials, and interactive learning tools. Built with a focus on performance and seamless user experience.",
+    description_tj: "Экосистемаи мукаммали таълимӣ, ки ба донишҷӯён имкони истифодаи китобхонаи рақамӣ, маводҳои курсӣ ва асбобҳои интерактивии омӯзишро фароҳам меорад. Бо тамаркуз ба суръат ва роҳати истифодабарӣ сохта шудааст.",
+    description_ru: "Комплексная образовательная экосистема, предоставляющая студентам доступ к цифровым библиотекам, учебным материалам и интерактивным инструментам обучения. Разработана с акцентом на производительность и удобство пользователя.",
+    image_url: "/imageDonishyob.png",
+    live_url: "https://donishyob.vercel.app/",
+    github_url: "https://github.com/Muhsiddin-dev/DonishYob",
+    technologies: [
       "Next.js",
       "TypeScript",
       "React",
@@ -93,26 +86,21 @@ export const PROJECTS_DATA = [
       "Tailwind CSS",
       "Zod"
     ],
-    "featured": true,
-    "sort_order": 1
+    featured: true,
+    sort_order: 2
   },
   {
-    "id": "a64f9380-5a9e-421a-a874-b88a7cb645",
-    "title_en": "MTMU 97",
-    "title_ru": "MTMU 97",
-    "title_tj": "MTMU 97",
-
-    "description_en": "Secondary General Education Institution №97 of Dushanbe. Information on admissions, faculty, facilities, and student achievements. Build your child's future with us!",
-
-    "description_tj": "Муассисаи таҳсилоти миёнаи умумии №97-и шаҳри Душанбе. Маълумот дар бораи қабул, омӯзгорон, синфхонаҳо ва дастовардҳои хонандагон. Ояндаи фарзанди худро бо мо созед!",
-
-    "description_ru": "Среднее общеобразовательное учреждение №97 города Душанбе. Информация о приёме, учителях, учебных классах и достижениях учащихся. Стройте будущее своего ребенка вместе с нами!",
-
-    "image_url": "/imageMTMU97.png",
-    "live_url": "https://mtmu-97.vercel.app/",
-    "github_url": "https://github.com/Muhsiddin-dev/MTMU_97",
-
-    "technologies": [
+    id: "a64f9380-5a9e-421a-a874-b88a7cb645",
+    title_en: "MTMU 97",
+    title_ru: "MTMU 97",
+    title_tj: "MTMU 97",
+    description_en: "Secondary General Education Institution №97 of Dushanbe. Information on admissions, faculty, facilities, and student achievements. Build your child's future with us!",
+    description_tj: "Муассисаи таҳсилоти миёнаи умумии №97-и шаҳри Душанбе. Маълумот дар бораи қабул, омӯзгорон, синфхонаҳо ва дастовардҳои хонандагон. Ояндаи фарзанди худро бо мо созед!",
+    description_ru: "Среднее общеобразовательное учреждение №97 города Душанбе. Информация о приёме, учителях, учебных классах и достижениях учащихся. Стройте будущее своего ребенка вместе с нами!",
+    image_url: "/imageMTMU97.png",
+    live_url: "https://mtmu-97.vercel.app/",
+    github_url: "https://github.com/Muhsiddin-dev/MTMU_97",
+    technologies: [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
@@ -121,43 +109,12 @@ export const PROJECTS_DATA = [
       "Zustand",
       "Lucide React"
     ],
-
-    "featured": true,
-    "sort_order": 1
+    featured: true,
+    sort_order: 3
   },
-  // {
-  //   "id": "a64f9380-5a9e-421a-a874-b88a7cb645",
-  //   "title_en": "CRM Saliheen",
-  //   "title_ru": "CRM Saliheen",
-  //   "title_tj": "CRM Saliheen",
-
-  //   "description_en": "An internal management system designed for Saliheen CRM to track finances, manage user applications, and monitor committee workflows. Features include real-time analytics, status tracking, and automated reporting.",
-
-  //   "description_tj": "Системаи мукаммали идоракунии Saliheen CRM барои назорати молиявӣ, идоракунии дархостҳои корбарон ва мониторинги фаъолияти кумитаҳо. Дорои аналитикаи вақти воқеӣ, пайгирии ҳолати дархостҳо ва ҳисоботи худкор.",
-
-  //   "description_ru": "Комплексная система управления Saliheen CRM для финансового контроля, обработки заявок пользователей и мониторинга деятельности комитетов. Включает аналитику в реальном времени, отслеживание статусов заявок и автоматическую отчетность.",
-
-  //   "image_url": "https://mtmu-97.vercel.app/mtmu_97.png",
-  //   "live_url": "https://mtmu-97.vercel.app/",
-  //   "github_url": "https://github.com/Muhsiddin-dev/MTMU_97",
-
-  //   "technologies": [
-  //     "Next.js",
-  //     "TypeScript",
-  //     "Tailwind CSS",
-  //     "Shadcn UI",
-  //     "Redux Toolkit Query",
-  //     "Lucide React",
-  //     "Recharts",
-  //     "Sonner"
-  //   ],
-
-  //   "featured": true,
-  //   "sort_order": 1
-  // }
 ]
 
-export const CERTIFICATES_DATA = [
+export const CERTIFICATES_DATA: Certificate[] = [
   {
     id: "1",
     title_en: "Frontend Development Certificate",
@@ -171,4 +128,4 @@ export const CERTIFICATES_DATA = [
     credential_url: null,
     sort_order: 1
   },
-];
+]

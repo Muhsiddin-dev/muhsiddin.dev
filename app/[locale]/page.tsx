@@ -9,15 +9,17 @@ import { SkillsSection } from "@/components/skills-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen flex flex-col bg-background text-foreground">
       <Header />
-      <HeroSection />
-      <AboutSection/>
-      <SkillsSection />
-      <ProjectsSection />
-      <CertificatesSection />
-      <ContactSection />
+      <main className="flex-1 flex flex-col space-y-16 md:space-y-24 pb-12">
+        <HeroSection />
+        <AboutSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <CertificatesSection />
+        <ContactSection />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }

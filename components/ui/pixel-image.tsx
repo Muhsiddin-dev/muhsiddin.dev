@@ -21,6 +21,7 @@ type PredefinedGridKey = keyof typeof DEFAULT_GRIDS
 
 interface PixelImageProps {
   src: string
+  alt: string
   grid?: PredefinedGridKey
   customGrid?: Grid
   grayscaleAnimation?: boolean
@@ -32,6 +33,7 @@ interface PixelImageProps {
 
 export const PixelImage = ({
   src,
+  alt,
   grid = "6x4",
   grayscaleAnimation = true,
   pixelFadeInDuration = 2800,
@@ -128,7 +130,7 @@ export const PixelImage = ({
         >
           <Image
             src={src}
-            alt={`Pixel image piece ${index + 1}`}
+            alt={alt}
             fill
             className={cn(
               "z-1 rounded-[2.5rem] object-cover", // h-full w-full илова шуд

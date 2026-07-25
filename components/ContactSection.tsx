@@ -4,7 +4,8 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Mail, Send, MapPin } from 'lucide-react'
 import { useTranslations, useLocale } from 'next-intl'
-import { Admin, type Language } from '@/types/types'
+import { useContentStore } from '@/hooks/use-content-store'
+import type { Language } from '@/types/types'
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -14,7 +15,7 @@ const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
 )
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 24 24" fill="currentColor" {...props}             >
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </svg>
 )
@@ -35,16 +36,16 @@ const InstagramIcon = () => (
     </svg>
 )
 
-
 export function ContactSection() {
     const t = useTranslations("contact")
     const locale = useLocale()
     const ref = useRef(null)
+    const { personal } = useContentStore()
 
     const locationLabels: Record<Language, string> = {
-        tj: 'Душанбе, Тоҷикистон',
-        ru: 'Душанбе, Таджикистан',
-        en: 'Dushanbe, Tajikistan',
+        tj: `${personal.city}, Тоҷикистон`,
+        ru: `${personal.city}, Таджикистан`,
+        en: `${personal.city}, ${personal.country}`,
     }
     const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -52,32 +53,32 @@ export function ContactSection() {
         {
             icon: Mail,
             label: "Email",
-            value: Admin.email,
-            href: Admin.email ? `${Admin.email}` : undefined,
+            value: personal.email,
+            href: personal.email ? `mailto:${personal.email}` : undefined,
         },
         {
             icon: GithubIcon,
             label: 'GitHub',
-            value: Admin?.github_UserName?.replace('https://github.com/', '@'),
-            href: Admin?.github_UserName,
+            value: personal.github?.replace('https://github.com/', '@'),
+            href: personal.github,
         },
         {
             icon: LinkedinIcon,
             label: 'LinkedIn',
-            value: Admin?.linkedin_UserName?.replace('https://linkedin.com/in/', '@'),
-            href: Admin?.linkedin_UserName,
+            value: personal.linkedin?.replace('https://linkedin.com/in/', '@'),
+            href: personal.linkedin,
         },
         {
             icon: Send,
             label: 'Telegram',
-            value: Admin?.telegram_UserName?.replace('https://t.me/', '@'),
-            href: Admin?.telegram_UserName,
+            value: personal.telegram?.replace('https://t.me/', '@'),
+            href: personal.telegram,
         },
         {
             icon: InstagramIcon,
             label: 'instagram',
-            value: Admin?.Instagram_UserName?.replace('https://www.instagram.com/', '@'),
-            href: Admin?.Instagram_UserName,
+            value: personal.instagram?.replace('https://www.instagram.com/', '@'),
+            href: personal.instagram,
         },
     ].filter(item => item.value)
 

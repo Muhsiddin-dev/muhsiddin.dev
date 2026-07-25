@@ -48,5 +48,22 @@
   },
   "footer": {
     "rights": "All rights reserved"
+  },
+  "admin": {
+    "login": "Login",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "password": "Password",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add",
+    "personalInfo": "Personal info",
+    "projectsList": "Projects list",
+    "certificatesList": "Certificates list",
+    "uploadImage": "Upload image",
+    "uploadPhoto": "Upload photo"
   }
 }

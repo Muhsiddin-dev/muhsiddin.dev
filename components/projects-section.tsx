@@ -5,12 +5,12 @@ import { useRef } from 'react'
 import { ExternalLink, Folder } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { useTranslations, useLocale } from 'next-intl'
-import { PROJECTS_DATA } from '@/lib/data'
-import Image from 'next/image'
+import { useContentStore } from '@/hooks/use-content-store'
+import type { Project } from '@/types/types'
 import { Safari } from './ui/safari'
 
 interface ProjectCardProps {
-    project: typeof PROJECTS_DATA[0]
+    project: Project
     index: number
 }
 
@@ -32,7 +32,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             className="group bg-card rounded-xl border border-border overflow-hidden hover:border-primary/50 transition-colors shadow-sm"
         >
             {project.image_url ? (
-            <div onClick={() => window.open(project.live_url, '_blank')} className="w-full cursor-pointer">
+            <div onClick={() => project.live_url && window.open(project.live_url, '_blank')} className="w-full cursor-pointer">
                     <Safari mode='default'
                         imageSrc={project.image_url}
                         url="magicui.design"
@@ -102,8 +102,9 @@ export function ProjectsSection() {
     const t = useTranslations("projects")
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true, margin: '-100px' })
+    const { projects } = useContentStore()
 
-    const sortedProjects = [...PROJECTS_DATA].sort((a, b) => a.sort_order - b.sort_order)
+    const sortedProjects = [...projects].sort((a, b) => a.sort_order - b.sort_order)
 
     return (
         <section id="projects" className="py-24 bg-background">

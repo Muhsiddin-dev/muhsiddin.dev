@@ -28,8 +28,8 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
             >
                 <SwiperSlide className="w-full h-full relative">
                     <PixelImage
-                        src={'/Img1-Admin.png'}
-                        // alt={Admin_Name}
+                        src={'/Img1-Admin.jpg'}
+                        alt={"Muhsiddin Nazarov"}
                         // fill 
                         grid="8x8"
                     // className="object-cover w-full h-full rounded-full"
@@ -41,7 +41,7 @@ export default function EffectFlipComponent({ Admin_Name }: { Admin_Name: string
                         src={'/Img3-Admin.png'}
                         alt={Admin_Name}
                         fill
-                        className="object-cover w-full h-full rounded-full"
+                        className="object-cover size-3 w-full h-full rounded-full"
                         priority
                     />
                 </SwiperSlide>
